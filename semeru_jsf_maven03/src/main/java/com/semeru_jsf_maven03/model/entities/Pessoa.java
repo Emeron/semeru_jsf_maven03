@@ -4,9 +4,10 @@ package com.semeru_jsf_maven03.model.entities;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+import org.hibernate.annotations.ForeignKey;
 
 /**
- * @author Emerson | 19/04/13
+ * @author Emerson | 19,20/04/13
  * http://www.youtube.com/watch?v=0iRvh-whhBY
  */
 @Entity
@@ -33,7 +34,12 @@ public class Pessoa implements Serializable{
     @Column(name="dataCadastro", nullable=false, length=80) 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataCadastro;
-
+    
+    /* relacionamento 20/04 */
+    @ManyToOne(optional=false)
+    @ForeignKey(name = "PessoaSexo")
+    private Pessoa pessoa;//muitas pessoa possui um sexo
+    
     public Pessoa() {
     }
 
