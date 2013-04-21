@@ -7,7 +7,7 @@ import javax.persistence.*;
 import org.hibernate.annotations.ForeignKey;
 
 /**
- * @author Emerson | 19,20/04/13
+ * @author Emerson | 19,20,21/04/13
  * http://www.youtube.com/watch?v=0iRvh-whhBY
  */
 @Entity
@@ -35,14 +35,37 @@ public class Pessoa implements Serializable{
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataCadastro;
     
+    @OneToOne(mappedBy="pessoa", fetch= FetchType.LAZY)
+    @ForeignKey(name="EnderecoPessoa")
+    private Endereco endereco;
+    
     /* relacionamento 20/04 */
     @ManyToOne(optional=false)
     @ForeignKey(name = "PessoaSexo")
-    private Pessoa pessoa;//muitas pessoa possui um sexo
+    @JoinColumn(name="IdSexo", referencedColumnName="IdSexo")
+    private Sexo sexo;//muitas pessoa possui um sexo
     
     public Pessoa() {
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+     
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    
+    
     public String getCpf() {
         return cpf;
     }
