@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Emerson | 21/04/13
+http://www.youtube.com/watch?v=fgFHwqukvf4
+https://github.com/leandrocgsi/semeru_jsf_maven/tree/master/semeru_jsf_maven/src/main/webapp/WEB-INF
+-->
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+              version="2.0">
+                  
+          <lifecycle>
+        <phase-listener>com.semeru_jsf_maven03.util.PhaseListenerSemeru</phase-listener>
+         </lifecycle>        
+          
+</faces-config>
