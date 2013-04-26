@@ -3,14 +3,14 @@ Emerson | 22/04/13
 https://github.com/leandrocgsi/semeru_jsf_maven/blob/master/semeru_jsf_maven/src/main/resources/hibernate.cfg.xml
 -->
 
-
+<root>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 
-<root>
+
   <hibernate-coniguration>
       <session-factory>
           <!--configuração de conexao com o bd-->

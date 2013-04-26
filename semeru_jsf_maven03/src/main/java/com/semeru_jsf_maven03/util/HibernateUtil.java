@@ -6,17 +6,12 @@ package com.semeru_jsf_maven03.util;
 
 
 import org.hibernate.SessionFactory;
-import org.hibernate.service.ServiceRegistryBuilder;
-import org.hibernate.service.spi.ServiceBinding;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.spi.SessionFactoryServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
- * Hibernate Utility class with a convenient method to get Session Factory
- * object.
- *
- * @author maria
+  * @author maria
  */
 public class HibernateUtil {
     

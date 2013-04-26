@@ -12,9 +12,9 @@ public class PhaseListenerSemeru implements PhaseListener{
    
     //antes de Fase
     @Override
-    public void afterPhase(PhaseEvent fase) {
+    public void beforePhase(PhaseEvent fase) {
        if (fase.getPhaseId().equals(PhaseId.RESTORE_VIEW)){
-           System.out.println("Antes da fase " + getPhaseId());
+           System.out.println("Antes da fase " + fase.getPhaseId());
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             FacesContexUtil.setRequestSession(session);
@@ -23,8 +23,8 @@ public class PhaseListenerSemeru implements PhaseListener{
 
     //depois da fase
     @Override
-    public void beforePhase(PhaseEvent fase) {
-        System.out.println("Depois da fase " + getPhaseId());
+    public void afterPhase(PhaseEvent fase) {
+        System.out.println("Depois da fase " + fase.getPhaseId());
         if (fase.getPhaseId().equals(PhaseId.RENDER_RESPONSE)) {
             Session session = FacesContexUtil.getRequestSession();
             try{
